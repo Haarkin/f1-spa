@@ -1,0 +1,11 @@
+.header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(247, 201, 116);
+}
+
+.title {
+    font-size: 30px;
+    font-weight: 400;
+}
