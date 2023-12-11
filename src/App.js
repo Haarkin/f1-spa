@@ -4,6 +4,7 @@ import RootLayout from './components/Root';
 import HomePage from './components/Home';
 import Racers from './components/Racers';
 import FavoritesList from './components/FavoritesList';
+import { FavoritesContextProvider } from './store/FavoritesContext';
 
 const router = createBrowserRouter([
   { path: '/', element: <RootLayout />, children: [
@@ -14,7 +15,11 @@ const router = createBrowserRouter([
 ])
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <FavoritesContextProvider>
+      <RouterProvider router={router} />
+    </FavoritesContextProvider>
+  );
 }
 
 export default App;

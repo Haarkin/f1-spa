@@ -1,30 +1,15 @@
-export default function FavoritesList(props) {
+import { useContext } from "react"
+import FavoritesContext from "../store/FavoritesContext"
+import FavoritesInfo from "./FavoriteInfo"
+
+export default function FavoritesList() {
+    const favoritesCtx = useContext(FavoritesContext)
+
     return (
         <ul>
-            <li>
-                Name: {props.name}
-                Age: {props.age}
-                Racing number: {props.number}
-                Place: {props.place}
-            </li>
-            <li>
-                Name: {props.name}
-                Age: {props.age}
-                Racing number: {props.number}
-                Place: {props.place}
-            </li>
-            <li>
-                Name: {props.name}
-                Age: {props.age}
-                Racing number: {props.number}
-                Place: {props.place}
-            </li>
-            <li>
-                Name: {props.name}
-                Age: {props.age}
-                Racing number: {props.number}
-                Place: {props.place}
-            </li>
+            {favoritesCtx.items.map(favorite => 
+                <FavoritesInfo key={favorite.number} favorite={favorite} />
+            )}
         </ul>
     )
 }
